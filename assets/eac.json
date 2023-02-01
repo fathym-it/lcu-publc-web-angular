@@ -1,0 +1,58 @@
+{
+  "Applications": {
+    "$1": {
+      "Application": {
+        "Description": "A basic starting point for sites built with Angular.",
+        "Name": "Angular Quickstart Project - Forked Recipe"
+      },
+      "LookupConfig": {
+        "PathRegex": "/.*"
+      },
+      "LowCodeUnit": {
+        "Package": "fork|github://fathym-it/public-web-angular",
+        "Version": "latest",
+        "Type": "GitHub"
+      },
+      "Processor": {
+        "BaseHref": "/",
+        "DefaultFile": "index.html",
+        "Type": "DFS"
+      }
+    }
+  },
+  "Environments": {
+    "$#.PrimaryEnvironment": {
+      "Artifacts": {
+        "angular-build-release": {
+          "Name": "Angular Build/Release",
+          "Output": "./dist",
+          "Type": "GitHub",
+          "BuildCommand": "npm run build",
+          "InstallCommand": "npm ci",
+          "NPMRegistry": "https://registry.npmjs.org/"
+        }
+      },
+      "DevOpsActions": {
+        "github-artifacts-release-angular": {
+          "Name": "GitHub Artifacts - Release - Angular",
+          "Path": "lcu-github-artifacts-release.yml",
+          "ArtifactLookups": ["angular-build-release"],
+          "Templates": [
+            "https://raw.githubusercontent.com/lowcodeunit/infrastructure/master/github/actions/artifacts/_header.hbs.yml",
+            "https://raw.githubusercontent.com/lowcodeunit/infrastructure/master/github/actions/artifacts/release-flow.yml"
+          ]
+        }
+      },
+      "Sources": {
+        "fork|github://fathym-it/public-web-angular": {
+          "DevOpsActionTriggerLookups": ["github-artifacts-release-angular"],
+          "Branches": ["main"],
+          "MainBranch": "main",
+          "Organization": "fathym-it",
+          "Repository": "public-web-angular",
+          "Type": "GitHub"
+        }
+      }
+    }
+  }
+}
