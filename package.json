@@ -1,7 +1,7 @@
 {
-  "name": "@fathym-it/lcu-publc-web-angular",
+  "name": "@fathym-it/lcu-public-web-angular",
   "version": "0.0.1",
-  "description": "@fathym-it/lcu-publc-web-angular",
+  "description": "@fathym-it/lcu-public-web-angular",
   "author": "Fathym, Inc",
   "main": "lcu.json",
   "scripts": {
