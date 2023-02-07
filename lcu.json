@@ -2,11 +2,8 @@
   "Package": {
     "Name": "Angular Quickstart Project - Forked Recipe",
     "Description": "A basic template to quickly deploy an Angular app to Fathym.",
-    "Button": "Launch",
-    "Image": "https://www.fathym.com/assets/images/logo.png",
-    "PreviewImage": "https://www.fathym.com/assets/images/logo.png",
-    "SuccessType": "Project"
-  },
-  "EaC": "./assets/eac.json",
-  "Parameters": "./assets/parameters.json"
+    "Image": "https://www.fathym.com/img/angular.png",
+    "PreviewImage": "https://angular.io/assets/images/logos/angular/angular.svg",
+    "UsesGit": true
+  }
 }
