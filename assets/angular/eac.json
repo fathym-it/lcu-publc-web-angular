@@ -1,0 +1,77 @@
+{
+  "Applications": {
+    "{{$1}}-public-web-angular": {
+      "Details": {
+        "Description": "A basic starting point for sites built with Angular.",
+        "Name": "Angular Quickstart Project - Forked Recipe"
+      },
+      "LookupConfig": {
+        "PathRegex": "/.*"
+      },
+      "Package": {
+        "Details": {
+          "Build": "latest",
+          "Path": "lcu-github-artifacts-release.yml"
+        },
+        "SourceControlLookup": "github://{{ORGANIZATION}}/public-web-angular",
+        "Type": "GitHubLowCodeUnit"
+      },
+      "Processor": {
+        "Details": {
+          "BaseHref": "/",
+          "DefaultFile": "index.html"
+        },
+        "Type": "DFSProcessor"
+      }
+    }
+  },
+  "Environments": {
+    "{{EaC.PrimaryEnvironment}}": {
+      "Artifacts": {
+        "angular-build-release": {
+          "Type": "GitHubArtifact",
+          "Details": {
+            "Name": "Angular Build/Release",
+            "Output": "./dist",
+            "BuildCommand": "npm run build",
+            "InstallCommand": "npm ci",
+            "NPMRegistry": "https://registry.npmjs.org/"
+          }
+        }
+      },
+      "DevOpsActions": {
+        "github-artifacts-release-angular": {
+          "ArtifactLookups": ["angular-build-release"],
+          "Details": {
+            "Name": "GitHub Artifacts - Release - Angular",
+            "Path": "lcu-github-artifacts-release.yml",
+            "Templates": [
+              "https://raw.githubusercontent.com/lowcodeunit/infrastructure/master/github/actions/artifacts/_header.hbs.yml",
+              "https://raw.githubusercontent.com/lowcodeunit/infrastructure/master/github/actions/artifacts/release-flow.yml"
+            ]
+          }
+        }
+      },
+      "Sources": {
+        "fork|github://fathym-it/public-web-angular": {
+          "DevOpsActionTriggerLookups": ["github-artifacts-release-angular"],
+          "Details": {
+            "Branches": ["main"],
+            "MainBranch": "main",
+            "Organization": "{{ORGANIZATION}}",
+            "Repository": "public-web-angular",
+            "Name": "github://{{ORGANIZATION}}/public-web-angular"
+          },
+          "Type": "GitHubSourceControl"
+        }
+      }
+    }
+  },
+  "Projects": {
+    "{{PROJECT_LOOKUP}}": {
+      "ApplicationLookups": [
+        "{{$1}}-public-web-angular"
+      ]
+    }
+  }
+}

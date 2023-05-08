@@ -3,7 +3,19 @@
     "Name": "Angular Quickstart Project - Forked Recipe",
     "Description": "A basic template to quickly deploy an Angular app to Fathym.",
     "Image": "https://www.fathym.com/img/angular.png",
-    "PreviewImage": "https://angular.io/assets/images/logos/angular/angular.svg",
-    "UsesGit": true
+    "PreviewImage": "https://angular.io/assets/images/logos/angular/angular.svg"
+  },
+  "Configurations": {
+    "Full": {
+      "Name": "Angular Quickstart",
+      "Description": "Angular Quickstart",
+      "Phases": [
+        {
+          "Name": "Setup Angular",
+          "Order": 1,
+          "Asset": "angular"
+        }
+      ]
+    }
   }
 }
