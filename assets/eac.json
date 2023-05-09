@@ -26,7 +26,7 @@
       "Artifacts": {
         "angular-build-release": {
           "Name": "Angular Build/Release",
-          "Output": "./dist",
+          "Output": "./dist/angular-typescript-app",
           "Type": "GitHub",
           "BuildCommand": "npm run build",
           "InstallCommand": "npm ci",
