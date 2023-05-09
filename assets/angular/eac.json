@@ -32,7 +32,7 @@
           "Type": "GitHubArtifact",
           "Details": {
             "Name": "Angular Build/Release",
-            "Output": "./dist",
+            "Output": "./dist/angular-typescript-app",
             "BuildCommand": "npm run build",
             "InstallCommand": "npm ci",
             "NPMRegistry": "https://registry.npmjs.org/"
