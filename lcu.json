@@ -1,7 +1,7 @@
 {
   "Package": {
-    "Name": "Angular Quickstart Project - Forked Recipe",
-    "Description": "A basic template to quickly deploy an Angular app to Fathym.",
+    "Name": "Angular Starter - GitHub Fork",
+    "Description": "An Angular starter app deployed to Fathym via a repository forked to your GitHub.",
     "Image": "https://www.fathym.com/img/angular.png",
     "PreviewImage": "https://angular.io/assets/images/logos/angular/angular.svg",
     "Intents": [
@@ -13,11 +13,11 @@
   },
   "Configurations": {
     "Full": {
-      "Name": "Angular Quickstart",
-      "Description": "Angular Quickstart",
+      "Name": "Angular Starter - GitHub Fork",
+      "Description": "An Angular starter app deployed to Fathym via a repository forked to your GitHub.",
       "Phases": [
         {
-          "Name": "Setup Angular",
+          "Name": "Setting Up Angular",
           "Order": 1,
           "Asset": "angular"
         }
