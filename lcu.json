@@ -17,7 +17,7 @@
       "Description": "An Angular starter app deployed to Fathym via a repository forked to your GitHub.",
       "Phases": [
         {
-          "Name": "Setting Up Angular",
+          "Name": "Setting Up Angular Project",
           "Order": 1,
           "Asset": "angular"
         }
